@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "axios": "^1.7.7",
-    "vue": "^3.5.12"
+    "vue": "^3.5.12",
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
     "@types/axios": "^0.14.4",
+    "@types/vue-router": "^2.0.0",
     "@vitejs/plugin-vue": "^5.1.4",
     "typescript": "~5.6.2",
     "vite": "^5.4.9",

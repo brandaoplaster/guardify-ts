@@ -5,7 +5,7 @@
 <template>
   <div class="card">
     <h1>
-      Home Page
+      Home Admin
     </h1>
   </div>
 </template>

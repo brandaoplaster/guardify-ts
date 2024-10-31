@@ -47,6 +47,9 @@ export default {
       Login
     </h1>
     <form action="#" method="post" @submit.prevent="auth">
+      <div v-if="error.active">
+        <p>{{ error.mensageError }}</p>
+      </div>
       <input type="email" name="email" placeholder="E-mail" v-model="email">
       <input type="password" name="password" placeholder="Password" v-model="password">
       <button type="submit" :class="{ disabled: loading }">

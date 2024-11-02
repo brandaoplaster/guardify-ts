@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import HttpClient from "./HttpClient";
-import { API_URL } from "@/helpers/constants";
+import { API_URL, TOKEN } from "@/helpers/constants";
 
 class HttpClientAdapter implements HttpClient {
   private axiosInstance: AxiosInstance | null = null;
@@ -33,6 +33,16 @@ class HttpClientAdapter implements HttpClient {
   }
   async delete(url: string, options?: object): Promise<any> {
     return await this.axiosInstance?.delete(url, options);
+  }
+
+  withAuthorization(): this {
+    if (this.axiosInstance) {
+      const token = localStorage.getItem(TOKEN);
+      this.axiosInstance.defaults.headers.common[
+        "Authorization"
+      ] = `Bearer ${token}`;
+    }
+    return this;
   }
 }
 

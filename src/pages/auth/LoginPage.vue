@@ -1,6 +1,6 @@
 <script lang="ts">
 import { reactive, ref } from 'vue';
-import { useUsersStore } from '../../stores/users';
+import { useUsersStore } from '@/stores/users';
 
 
 export default {

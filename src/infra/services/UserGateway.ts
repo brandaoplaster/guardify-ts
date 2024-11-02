@@ -1,5 +1,5 @@
-import { TOKEN } from "../../helpers/constants";
-import httpAdapter from "../http/HttpClientAdapter";
+import { TOKEN } from "@/helpers/constants";
+import httpAdapter from "@/infra/http/HttpClientAdapter";
 
 export default class UserService {
   async login(email: string, password: string): Promise<any> {

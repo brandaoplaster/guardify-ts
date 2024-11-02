@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import HttpClient from "./HttpClient";
-import { API_URL } from "../../helpers/constants";
+import { API_URL } from "@/helpers/constants";
 
 class HttpClientAdapter implements HttpClient {
   private axiosInstance: AxiosInstance | null = null;

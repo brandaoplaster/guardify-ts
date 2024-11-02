@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
-import UserService from "../infra/services/UserGateway";
-import { User } from "../types/User";
+import UserService from "@/infra/services/UserGateway";
+import { User } from "@/types/User";
 
 const useSErviceUser = new UserService();
 

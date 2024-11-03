@@ -1,5 +1,6 @@
 import { TOKEN } from "@/helpers/constants";
 import httpAdapter from "@/infra/http/HttpClientAdapter";
+import { Permission } from "@/types/Permission";
 import { User } from "@/types/User";
 
 export default class UserService {
@@ -21,12 +22,21 @@ export default class UserService {
           localStorage.removeItem(TOKEN);
         }
       });
-    const { id, name, email } = response.data;
+    const { id, name, email, permissions } = response.data;
+
+    const permission: Permission[] = permissions.map((permission: Permission) => {
+      return {
+      id: permission.id,
+      name: permission.name,
+      description: permission.description,
+      }
+    });
 
     const user: User = {
       id,
       name,
       email,
+      permission,
     };
     return user;
   }

@@ -22,9 +22,9 @@ export default class UserService {
           localStorage.removeItem(TOKEN);
         }
       });
-    const { id, name, email, permissions } = response.data;
+    const { id, name, email, permissionsResponse } = response.data;
 
-    const permission: Permission[] = permissions.map((permission: Permission) => {
+    const permissions: Permission[] = permissionsResponse.map((permission: Permission) => {
       return {
       id: permission.id,
       name: permission.name,
@@ -36,7 +36,7 @@ export default class UserService {
       id,
       name,
       email,
-      permission,
+      permissions,
     };
     return user;
   }
